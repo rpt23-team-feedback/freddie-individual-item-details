@@ -26,3 +26,5 @@ const seedGames = async () => {
 }
 
 seedGames();
+
+module.exports.seedGames = seedGames;

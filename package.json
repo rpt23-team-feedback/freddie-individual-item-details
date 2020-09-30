@@ -11,9 +11,11 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "server": "nodemon ./server/app.js",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "test": "jest"
   },
   "dependencies": {
+    "@shelf/jest-mongodb": "^1.2.3",
     "axios": "^0.20.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

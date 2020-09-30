@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
-mongoose.connect('mongodb://localhost/games', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/games', { useNewUrlParser: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -35,13 +35,25 @@ const saveNewGame = (gameObj) => {
     gameplay: gameObj.gameplay,
     key_features: gameObj.key_features
   });
-  newGame.save((err, game) => {
+  return newGame.save((err, game) => {
     if (err) {
-      return console.error(err);
+      console.error(err);
     } else {
-      return console.log('new game saved:', game);
+      return game;
+    }
+  })
+}
+
+const getAllGames = () => {
+  return Game.find({}, (err, games) => {
+    if (err) {
+      console.log('Error getting all games:', err);
+    } else {
+      console.log('All games in db:', games);
+      return games;
     }
   })
 }
 
 module.exports.saveNewGame = saveNewGame;
+module.exports.getAllGames = getAllGames;
