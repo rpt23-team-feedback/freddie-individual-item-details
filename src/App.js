@@ -33,6 +33,3 @@ class App extends React.Component{
 
 export default hot(module)(App);
 
-// fetch("https://localhost:3000/games")
-// .then(res => res.json())
-// .then(result =>console.log(result));

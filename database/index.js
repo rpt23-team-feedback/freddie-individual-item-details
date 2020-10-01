@@ -47,13 +47,25 @@ const saveNewGame = (gameObj) => {
 const getAllGames = () => {
   return Game.find({}, (err, games) => {
     if (err) {
-      console.log('Error getting all games:', err);
+      console.error('Error getting all game items:', err);
     } else {
-      console.log('All games in db:', games);
+      console.log('All game items in db:', games);
       return games;
+    }
+  })
+}
+
+const getSingleGame = (gameId) => {
+  return Game.findOne({gameId}, (err, game) => {
+    if (err) {
+      console.error('Error getting single game item:', err);
+    } else {
+      console.log('Single game item in db:', game);
+      return game;
     }
   })
 }
 
 module.exports.saveNewGame = saveNewGame;
 module.exports.getAllGames = getAllGames;
+module.exports.getSingleGame = getSingleGame;
