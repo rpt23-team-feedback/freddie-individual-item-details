@@ -10,7 +10,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "server": "nodemon ./server/app.js",
+    "dev": "webpack -d --watch",
+    "server": "nodemon ./server/index.js",
     "seed": "node seed.js",
     "test": "jest"
   },

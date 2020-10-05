@@ -12,16 +12,6 @@ class App extends React.Component{
     }
   }
 
-  componentDidMount() {
-    axios.get('http://localhost:3000/games')
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.error(err);
-    })
-  }
-
   render(){
     return(
       <div className="App">
