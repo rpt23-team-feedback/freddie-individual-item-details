@@ -49,7 +49,6 @@ const getAllGames = () => {
     if (err) {
       console.error('Error getting all game items:', err);
     } else {
-      console.log('All game items in db:', games);
       return games;
     }
   })
@@ -60,7 +59,6 @@ const getSingleGame = (gameId) => {
     if (err) {
       console.error('Error getting single game item:', err);
     } else {
-      console.log('Single game item in db:', game);
       return game;
     }
   })
