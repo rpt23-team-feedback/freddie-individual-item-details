@@ -10,9 +10,15 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
+    "dev": "webpack -d --watch",
     "server": "nodemon ./server/app.js",
     "seed": "node seed.js",
     "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "dependencies": {
     "@shelf/jest-mongodb": "^1.2.3",
@@ -43,7 +49,7 @@
     "nodemon": "^2.0.4",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.1",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.1.8"
   }
 }
