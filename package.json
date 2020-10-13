@@ -11,9 +11,14 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "dev": "webpack -d --watch",
-    "server": "nodemon ./server/index.js",
+    "server": "nodemon ./server/app.js",
     "seed": "node seed.js",
     "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
   },
   "dependencies": {
     "@shelf/jest-mongodb": "^1.2.3",

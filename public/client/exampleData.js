@@ -1,0 +1,130 @@
+const exampleGamesArray = [
+  {
+    "creators": ["DuBuque Inc"],"os_options":["Mac","Windows","Linux","Steam"],
+    "gameplay": ["Veniam aut nam vel repellat sit fugiat.","Deserunt laborum aliquid reprehenderit fugit autem placeat et repudiandae.","Asperiores alias dolorum a veniam repudiandae dicta.","Fugit alias iusto culpa ut tempora itaque illo.","Qui perspiciatis reprehenderit voluptatem sit omnis dolorem."],
+    "key_features": ["Et odit eligendi distinctio possimus consequatur deserunt quas.","Enim labore cupiditate.","Nemo impedit quis deserunt corrupti facilis libero optio.","Quia voluptate qui optio quis consequuntur sint id eos.","Est et voluptas dolore doloremque omnis vel."],
+    "_id": "5f7b800d2f47bce18f01d92f",
+    "name": "tempore quibusdam accusamus",
+    "photo_url": "http://placeimg.com/640/480",
+    "video_url": "http://placeimg.com/640/480","description":"Dolor deserunt et qui amet veritatis molestias ut asperiores. Officiis ab et laborum qui sequi eum ut totam. Quia repellendus doloribus aut officiis. Consequatur sint distinctio rerum voluptas soluta.",
+    "gameId": 1,
+    "__v": 0
+  },
+  // {
+  //   "creators": ["Johnson - Trantow","Runolfsson - Ernser","Rutherford, Sporer and Kulas"],
+  //   "os_options": ["Linux","Windows","Mac","Steam"],
+  //   "gameplay": ["Ad est voluptatem ab est.","Numquam quos sed temporibus voluptas iure.","Error animi consequatur iusto itaque velit nisi qui.","Fugit placeat repudiandae et dolorem explicabo.","Assumenda assumenda qui."],
+  //   "key_features": ["Velit harum et incidunt et quis aliquid similique.","Rem ab voluptas cum modi.","Minus ex blanditiis.","Neque atque suscipit dolores eius deleniti rerum.","Tenetur ratione commodi perferendis."],
+  //   "_id": "5f7b800d2f47bce18f01d930",
+  //   "name": "a eveniet vero","photo_url":"http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480","description":"Quia dolores asperiores beatae illo accusamus. Quaerat asperiores nam voluptatibus molestias laudantium. Autem sapiente nemo fugit dolores non. Excepturi maiores rerum dolores vitae officiis.",
+  //   "gameId": 2,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Lind Inc","Schaefer - Baumbach"],
+  //   "os_options": ["Windows"],
+  //   "gameplay": ["Tenetur molestiae repudiandae consequatur.","Culpa repellendus explicabo placeat.","Consequuntur in et quo iusto incidunt ut qui facere reprehenderit.","Tempore eum iusto qui vero ut mollitia.","Ab a ullam tempora."],
+  //   "key_features": ["Perspiciatis quos rem enim illo eos ratione error vel provident.","Autem ad qui tempora.","Eligendi modi quidem rerum quae.","Omnis fuga quam dolorem fuga ut sunt.","Neque et qui fuga sed nihil ea quisquam cumque."],
+  //   "_id": "5f7b800d2f47bce18f01d931",
+  //   "name": "sint et molestiae",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Aut provident qui optio. Ipsum voluptas quos perspiciatis quo vel reprehenderit. Tenetur deleniti non rem ut accusantium tempore unde praesentium id.",
+  //   "gameId": 3,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Schulist, Grimes and Ullrich","Schimmel Inc","Morissette - Ward"],
+  //   "os_options": ["Windows","Steam"],
+  //   "gameplay": ["Ut illum ut voluptas est praesentium eum.","Consectetur quae qui et similique porro nostrum et.","Iste tempore perferendis et.","Temporibus sit exercitationem voluptatem tempora rerum necessitatibus.","Qui quae ut possimus enim voluptas omnis."],
+  //   "key_features": ["Itaque laborum sint.","Ut nostrum expedita temporibus.","Numquam iste sint dolor aut harum voluptatem.","Sint omnis molestiae nisi.","Sint temporibus doloribus molestiae dignissimos."],
+  //   "_id": "5f7b800d2f47bce18f01d933",
+  //   "name": "minima est aperiam",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Velit ut eos dolor alias. Corporis veritatis modi aut sunt molestias qui quis. Aut minus at voluptatum sed magni. Cum molestiae error eius ipsa error nobis est ut.",
+  //   "gameId": 4,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Windler LLC","Bernhard - Pollich"],
+  //   "os_options": ["Linux","Steam"],
+  //   "gameplay": ["Eveniet aut est non.","Animi omnis minus est rerum dolores accusamus aut quibusdam eum.","Quisquam libero odit officiis ut.","Aut corrupti cum et excepturi dolore voluptate.","Sit voluptas cupiditate minima."],
+  //   "key_features": ["Molestias porro pariatur distinctio aliquam non omnis.","Perferendis nulla ipsa.","Optio facere voluptatibus voluptatem occaecati vel aperiam necessitatibus omnis.","Omnis earum eos.","Rerum magni illo corporis eum."],
+  //   "_id": "5f7b800d2f47bce18f01d932",
+  //   "name": "laudantium culpa quaerat",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Consequatur numquam dolore qui et non corrupti accusamus nam. Quia assumenda qui quibusdam temporibus reprehenderit eius. Amet quisquam eaque quia voluptatem eius.",
+  //   "gameId": 5,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Hegmann - McCullough"],
+  //   "os_options": ["Mac","Steam"],
+  //   "gameplay": ["Quia eos ipsum.","Quas aperiam accusamus voluptas aperiam repudiandae autem.","Minus ut repellat quisquam et est dicta.","Qui dicta consectetur debitis sunt.","Facilis praesentium at."],
+  //   "key_features": ["Nam dolore qui officiis dolores quis repellat deserunt.","Qui qui unde aut quia maiores eligendi sit.","Maiores autem itaque rerum aut qui adipisci.","Pariatur alias est rerum odio aut repellendus accusamus maiores.","Magni sed quia et consequuntur."],
+  //   "_id": "5f7b800d2f47bce18f01d935",
+  //   "name": "voluptas sit laboriosam",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Molestias autem nobis eum ut veniam adipisci. Hic nobis accusamus. Suscipit corrupti exercitationem reprehenderit omnis culpa doloribus hic voluptatibus sequi.",
+  //   "gameId": 6,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["King - Bradtke","Christiansen LLC","Abernathy and Sons"],
+  //   "os_options": ["Windows","Mac","Linux","Steam"],
+  //   "gameplay": ["Quas qui et sit aut fugiat voluptatum distinctio.","Est atque et a aliquam.","Ut ad pariatur quis consequatur maiores dicta qui.","Voluptas quia id dolores commodi dolores.","Voluptatum laborum odio et dolorum a expedita aspernatur eligendi rem."],
+  //   "key_features": ["Id cupiditate aut qui amet.","Assumenda unde nisi delectus.","Consectetur nisi et dolor cumque ducimus ut voluptatum.","Adipisci ut tenetur distinctio praesentium voluptatem officiis.","Est quia dignissimos vel totam."],
+  //   "_id": "5f7b800d2f47bce18f01d934",
+  //   "name": "minus id earum",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Totam tenetur nam est. Possimus non perferendis reprehenderit. Laudantium amet excepturi enim autem facere sit. Sunt quo non quia consequatur quis quos consequatur.",
+  //   "gameId": 7,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Hoeger LLC"],
+  //   "os_options": ["Windows","Steam","Mac","Linux"],
+  //   "gameplay": ["Eaque et deserunt beatae ea cupiditate ea iusto consequatur accusamus.","Debitis ut odit nemo consequatur neque eius assumenda sunt.","Optio aliquam sequi impedit maxime ducimus.","In consequuntur possimus.","Qui fugit iste quis pariatur maiores et doloribus."],
+  //   "key_features": ["Voluptas deserunt et recusandae eos nemo voluptas cumque necessitatibus architecto.","Quia fuga inventore sit qui et quas minima ut veritatis.","Et aut illo ipsa tempora nesciunt sapiente et adipisci.","Omnis ipsam dolor.","Reiciendis harum nostrum ipsum quasi iste facere aliquam dolorem."],
+  //   "_id": "5f7b800d2f47bce18f01d937",
+  //   "name": "id enim aspernatur",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Nobis quis quia sed magnam sunt harum et quis mollitia. Quae veniam iusto at ut assumenda est possimus nemo. Ea placeat velit voluptatum. Quibusdam aut sequi numquam beatae architecto repudiandae ea aliquid et. Atque aut odit deleniti molestiae omnis exercitationem. Quia temporibus voluptas impedit minima nostrum nihil et.",
+  //   "gameId": 8,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Gottlieb Group","Jenkins Inc"],
+  //   "os_options": ["Windows","Linux","Mac","Steam"],
+  //   "gameplay": ["Aliquid impedit alias aliquam neque quia reiciendis.","Sed consequatur laborum tenetur eos omnis voluptas nulla.","Voluptate quis quia facilis dolor quod iure perspiciatis laborum quam.","Modi pariatur assumenda voluptatem voluptates.","Eaque assumenda et nemo cum et deleniti delectus."],
+  //   "key_features": ["Omnis et sit commodi similique ab dicta ut molestias.","Eaque ipsum quo quam cumque.","Eaque aperiam vero consequuntur eius dolorum expedita quia et modi.","Aut ea ut qui voluptatibus temporibus eos molestias.","Quod ipsa nam qui quo consequatur sit."],
+  //   "_id": "5f7b800d2f47bce18f01d939",
+  //   "name": "nulla adipisci sit",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Dolores eum aut omnis. Quidem quis illo molestias qui quia magni pariatur facilis enim. Amet blanditiis et ut quaerat voluptatem nulla qui aliquam magnam. Ducimus maxime architecto placeat qui consequatur et aut. Fugiat ut sapiente earum repellendus dolor aspernatur enim.",
+  //   "gameId": 9,
+  //   "__v": 0
+  // },
+  // {
+  //   "creators": ["Dooley - Schmitt","Botsford and Sons","Sanford and Sons"],
+  //   "os_options": ["Mac","Windows"],
+  //   "gameplay": ["Quo et autem quasi.","Consectetur a esse cumque.","Cupiditate autem ipsum sed ut quo quis.","Saepe eligendi animi molestiae et voluptas distinctio similique.","In autem ratione velit quis occaecati ad eius."],
+  //   "key_features": ["Deserunt nulla inventore rerum autem ut.","Quia at quam in.","Minima corrupti facere blanditiis.","Sit eaque natus repudiandae.","Rerum enim nulla eveniet excepturi atque."],
+  //   "_id": "5f7b800d2f47bce18f01d936",
+  //   "name": "in et qui",
+  //   "photo_url": "http://placeimg.com/640/480",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description": "Quis ut ea. Illo sint reprehenderit porro illum sunt unde velit nobis at. Deserunt nesciunt eum.",
+  //   "gameId": 10,
+  //   "__v": 0
+  // }
+]
+
+module.exports = exampleGamesArray;

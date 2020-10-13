@@ -5,9 +5,9 @@ const seedGames = async () => {
   try {
     const gameLimit = 300;
     const games = [];
-
     const systemOptions = ['Linux', 'Mac', 'Windows', 'Steam'];
     const randomSystemIdx = () => Math.floor(Math.random() * systemOptions.length);
+
     const getSystemOptions = () => {
       let systems = [];
       let systemsLength = randomSystemIdx();
@@ -19,6 +19,7 @@ const seedGames = async () => {
       }
       return systems;
     }
+
     const getCreators = () => {
       const creators = [];
       const creatorLimit = Math.floor(Math.random() * 3);
