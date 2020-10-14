@@ -25,7 +25,7 @@ const GamesListItem = (props) => (
       {/* Key Features is bold and font color is white */}
       Key Features
       <ul>
-        {props.game.key_features.map(feature => <li>{feature}</li> )}
+        {props.game.key_features.map((feature, idx) => <li key={idx}>{feature}</li> )}
       </ul>
     </div>
   </div>
