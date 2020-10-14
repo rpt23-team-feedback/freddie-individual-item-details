@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
+import Games from './components/Games.js';
 import exampleData from './exampleData';
 
-ReactDOM.render(<App exampleData={exampleData}/>, document.getElementById('root'));
+ReactDOM.render(<Games exampleData={exampleData}/>, document.getElementById('individual-items'));

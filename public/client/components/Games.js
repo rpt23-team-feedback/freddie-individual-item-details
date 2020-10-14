@@ -4,8 +4,7 @@ import {hot} from 'react-hot-loader';
 import GamesList from './GamesList';
 const axios = require('axios');
 
-
-class App extends React.Component{
+class Games extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -25,5 +24,5 @@ class App extends React.Component{
   }
 }
 
-export default hot(module)(App);
+export default hot(module)(Games);
 
