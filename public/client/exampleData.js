@@ -6,7 +6,8 @@ const exampleGamesArray = [
     "_id": "5f7b800d2f47bce18f01d92f",
     "name": "tempore quibusdam accusamus",
     "photo_url": "http://placeimg.com/640/480",
-    "video_url": "http://placeimg.com/640/480","description":"Dolor deserunt et qui amet veritatis molestias ut asperiores. Officiis ab et laborum qui sequi eum ut totam. Quia repellendus doloribus aut officiis. Consequatur sint distinctio rerum voluptas soluta.",
+    "video_url": "http://placeimg.com/640/480",
+    "description":"Dolor deserunt et qui amet veritatis molestias ut asperiores. Officiis ab et laborum qui sequi eum ut totam. Quia repellendus doloribus aut officiis. Consequatur sint distinctio rerum voluptas soluta.",
     "gameId": 1,
     "__v": 0
   },
@@ -17,7 +18,8 @@ const exampleGamesArray = [
   //   "key_features": ["Velit harum et incidunt et quis aliquid similique.","Rem ab voluptas cum modi.","Minus ex blanditiis.","Neque atque suscipit dolores eius deleniti rerum.","Tenetur ratione commodi perferendis."],
   //   "_id": "5f7b800d2f47bce18f01d930",
   //   "name": "a eveniet vero","photo_url":"http://placeimg.com/640/480",
-  //   "video_url": "http://placeimg.com/640/480","description":"Quia dolores asperiores beatae illo accusamus. Quaerat asperiores nam voluptatibus molestias laudantium. Autem sapiente nemo fugit dolores non. Excepturi maiores rerum dolores vitae officiis.",
+  //   "video_url": "http://placeimg.com/640/480",
+  //   "description":"Quia dolores asperiores beatae illo accusamus. Quaerat asperiores nam voluptatibus molestias laudantium. Autem sapiente nemo fugit dolores non. Excepturi maiores rerum dolores vitae officiis.",
   //   "gameId": 2,
   //   "__v": 0
   // },
