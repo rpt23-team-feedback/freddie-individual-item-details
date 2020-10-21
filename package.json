@@ -1,8 +1,8 @@
 {
-  "name": "",
+  "name": "items",
   "version": "",
-  "description": "",
-  "author": "",
+  "description": "Individual Items service for HumbleBundle",
+  "author": "Freddie Perez",
   "license": "",
   "engines": {
     "node": ">=6.13.0"

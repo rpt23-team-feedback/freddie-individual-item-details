@@ -32,5 +32,26 @@ const getSingleGame = async (gameId) => {
   }
 }
 
-module.exports.getSingleGame = getSingleGame;
-module.exports.Game = Game;
+const saveNewGame = (gameObj) => {
+  const newGame = new Game({
+    name: gameObj.name,
+    photo_url: gameObj.photo_url,
+    video_url: gameObj.video_url,
+    creators: gameObj.creators,
+    os_options: gameObj.os_options,
+    description: gameObj.description,
+    gameplay: gameObj.gameplay,
+    key_features: gameObj.key_features
+  });
+  return newGame.save((err, game) => {
+    if (err) {
+      console.error(err);
+    } else {
+      return game;
+    }
+  })
+}
+
+module.exports = {
+  Game: Game, getSingleGame, saveNewGame
+};
