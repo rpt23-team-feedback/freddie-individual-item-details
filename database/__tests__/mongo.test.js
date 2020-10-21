@@ -1,38 +1,100 @@
-const mongoose = require('mongoose');
+const {MongoClient} = require('mongodb');
 
-describe('Game model', () => {
+describe('insert', () => {
+  let connection;
+  let db;
 
-  beforeAll((done) => {
-    mongoose.connect('mongodb://localhost/testdb', { useNewUrlParser: true });
-    mongoose.connection.once('open', () => {
-      done();
-    })
-    .on('error', err => {
-      console.log('Error connecting to db:', err);
-    })
-  })
-
-  // afterAll( async (done) => {
-  //   //await mongoose.connection.close();
-  //   done();
-  // })
-
-  describe('random test', () => {
-    test('it should be a random test', (done) => {
-      const myObj = {firstName: 'Freddie', lastName: 'Perez'};
-      expect(myObj).toBeDefined();
-      done();
+  beforeAll(async () => {
+    connection = await MongoClient.connect(global.__MONGO_URI__, {
+      useNewUrlParser: true,
+    });
+    db = await connection.db(global.__MONGO_DB_NAME__);
+    db.createCollection('testGames', {
+      validator: {
+        $jsonSchema: {
+          bsonType: 'object',
+          required: ['name', 'photo_url', 'video_url', 'description'],
+          properties: {
+            name: {
+              bsonType: 'string',
+              description: 'must be a string and is required'
+            },
+            photo_url: {
+              bsonType: 'string',
+              description: 'must be a string and is required'
+            },
+            video_url: {
+              bsonType: 'string',
+              description: 'must be a string and is required'
+            },
+            creators: {
+              bsonType: 'array',
+              description: 'must be an array of strings'
+            },
+            os_options: {
+              bsonType: 'array',
+              description: 'must be an array of strings'
+            },
+            description: {
+              bsonType: 'string',
+              description: 'must be a string and is required'
+            },
+            gameplay: {
+              bsonType: 'array',
+              description: 'must be an array of strings'
+            },
+            key_features: {
+              bsonType: 'array',
+              description: 'must be an array of strings'
+            }
+          }
+        }
+      },
+      validationAction: 'error'
     })
   });
 
-  // describe('getSingleGame', () => {
-  //   test('it should return a single game document using gameId property', async (done) => {
-  //     const singleGame = await db.getSingleGame({'gameId': 5});
-  //     expect(singleGame).toBeDefined();
-  //     done();
-  //   })
-  // })
-// check schema not mongoose, define error routes - does front end handle the error
-// error if gameId exist or gameId 5 doesn't exist for example
-// look into tree shaking for webpack - google page speed
+  afterAll(async () => {
+    await connection.close();
+    await db.close();
+  });
+
+  it('should insert a game item into collection', async () => {
+    const games = db.collection('testGames');
+
+    const testGame = {
+      name: 'testGame',
+      photo_url: 'testPhotoUrl',
+      video_url: 'testVideoUrl',
+      creators: ['testCreator1', 'testCreator2', 'testCreator3'],
+      os_options: ['testOS1', 'testOS2', 'testOS3', 'testOS4'],
+      description: 'this is a test description',
+      gameplay: ['testGameplay1', 'testGameplay2', 'testGameplay3', 'testGameplay4'],
+      key_features: ['testKeyFeatures1', 'testKeyFeatures2', 'testKeyFeatures3', 'testKeyFeatures4']
+    };
+
+    await games.insertOne(testGame);
+    const insertedTestGame = await games.findOne({name: 'testGame'});
+    expect(insertedTestGame).toEqual(testGame);
+  });
+
+  // it('should not insert a game item if missing required property', async () => {
+  //   const games = db.collection('testGames');
+
+  //   const invalidGame = {
+  //     name: 'anotherTestGame',
+  //     photo_url: undefined,
+  //     video_url: 'testVideoUrl',
+  //     creators: ['testCreator1', 'testCreator2', 'testCreator3'],
+  //     os_options: ['testOS1', 'testOS2', 'testOS3', 'testOS4'],
+  //     description: 'this is a test description',
+  //     gameplay: ['testGameplay1', 'testGameplay2', 'testGameplay3', 'testGameplay4'],
+  //     key_features: ['testKeyFeatures1', 'testKeyFeatures2', 'testKeyFeatures3', 'testKeyFeatures4']
+  //   };
+
+  //   await games.insertOne(invalidGame);
+  //   const failedInvalidGameInsert = await games.find({name: 'anotherTestGame'});
+  //   expect(failedInvalidGameInsert).toThrow();
+  // });
+
 });

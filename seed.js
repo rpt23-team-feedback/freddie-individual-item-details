@@ -1,5 +1,5 @@
 const faker = require('faker');
-const {saveNewGame} = require('./database/index');
+const {saveNewGame} = require('./database/game_model');
 
 const seedGames = async () => {
   try {

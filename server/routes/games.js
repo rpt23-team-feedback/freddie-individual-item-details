@@ -1,6 +1,7 @@
 const express = require('express');
-const db = require('../../database/index.js');
+const db = require('../../database/game_model.js');
 let router = express.Router();
+console.log(db);
 
 router.use((err, req, res, next) => {
   console.error(err.stack);
@@ -13,12 +14,12 @@ router.route('/single/:gameId').get( async (req, res, next) => {
     const getSingleGame = await db.getSingleGame(gameId);
     res.json(getSingleGame);
   } catch (err) {
-    res.send('No game found');
+    res.status(500).send('No game found');
     next(err);
   }
 });
 
-router.route('/multiple').get( async (req, res) => {
+router.route('/multiple/').get( async (req, res) => {
   const multipleGameIds = req.query;
   try {
     (async function getGames(gameIdsObj) {
@@ -40,7 +41,7 @@ router.route('/multiple').get( async (req, res) => {
       res.send(games);
     })(multipleGameIds)
   } catch (err) {
-    res.send('Cannot find games');
+    res.status(500).send('Cannot find games');
     next(err);
   }
 });
