@@ -59,7 +59,7 @@ describe('insert', () => {
     await db.close();
   });
 
-  it('should insert a game item into collection', async () => {
+  it('should insert a game item into collection', async (done) => {
     const games = db.collection('testGames');
 
     const testGame = {
@@ -76,6 +76,7 @@ describe('insert', () => {
     await games.insertOne(testGame);
     const insertedTestGame = await games.findOne({name: 'testGame'});
     expect(insertedTestGame).toEqual(testGame);
+    done();
   });
 
   // it('should not insert a game item if missing required property', async () => {

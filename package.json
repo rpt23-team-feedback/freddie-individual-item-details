@@ -1,6 +1,6 @@
 {
   "name": "items",
-  "version": "",
+  "version": "1.0.0",
   "description": "Individual Items service for HumbleBundle",
   "author": "Freddie Perez",
   "license": "",
@@ -11,7 +11,7 @@
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
     "dev": "webpack -d --watch",
-    "server": "nodemon ./server/app.js",
+    "server": "nodemon ./server/server.js",
     "seed": "node seed.js",
     "test": "jest"
   },
@@ -48,6 +48,7 @@
     "jest": "^26.4.2",
     "nodemon": "^2.0.4",
     "style-loader": "^0.23.0",
+    "supertest": "^5.0.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.1.8"
