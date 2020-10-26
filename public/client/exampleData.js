@@ -1,6 +1,7 @@
 const exampleGamesArray = [
   {
-    "creators": ["DuBuque Inc"],"os_options":["Mac","Windows","Linux","Steam"],
+    "creators": ["DuBuque Inc"],
+    "os_options":["Mac","Windows","Linux","Steam"],
     "gameplay": ["Veniam aut nam vel repellat sit fugiat.","Deserunt laborum aliquid reprehenderit fugit autem placeat et repudiandae.","Asperiores alias dolorum a veniam repudiandae dicta.","Fugit alias iusto culpa ut tempora itaque illo.","Qui perspiciatis reprehenderit voluptatem sit omnis dolorem."],
     "key_features": ["Et odit eligendi distinctio possimus consequatur deserunt quas.","Enim labore cupiditate.","Nemo impedit quis deserunt corrupti facilis libero optio.","Quia voluptate qui optio quis consequuntur sint id eos.","Est et voluptas dolore doloremque omnis vel."],
     "_id": "5f7b800d2f47bce18f01d92f",

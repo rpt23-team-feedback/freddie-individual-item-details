@@ -12,7 +12,7 @@
     "build": "webpack --mode production",
     "dev": "webpack -d --watch",
     "server": "nodemon ./server/server.js",
-    "seed": "node seed.js",
+    "seed": "node database/seed.js",
     "test": "jest"
   },
   "jest": {
