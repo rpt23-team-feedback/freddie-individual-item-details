@@ -26,7 +26,11 @@ const Game = new mongoose.model('Game', gameSchema);
 
 const getSingleGame = async (gameId) => {
   try {
-    return await Game.findOne({gameId}).exec();
+    const foundGame = await Game.findOne({gameId}).exec();
+    if (foundGame.length === 0) {
+      throw err;
+    }
+    return foundGame;
   } catch (error) {
     throw error;
   }
@@ -41,7 +45,8 @@ const saveNewGame = (gameObj) => {
     os_options: gameObj.os_options,
     description: gameObj.description,
     gameplay: gameObj.gameplay,
-    key_features: gameObj.key_features
+    key_features: gameObj.key_features,
+
   });
   return newGame.save((err, game) => {
     if (err) {
