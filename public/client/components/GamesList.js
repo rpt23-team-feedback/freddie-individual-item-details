@@ -3,9 +3,8 @@ import GamesListItem from './GamesListItem';
 
 const GamesList = (props) => (
   <div>
-    {props.games.map((game) => {
-      console.log(game);
-      return <GamesListItem game={game} key={game.gameId}/>
+    {props.gameCount.map((game) => {
+      return <GamesListItem game={game} key={game} handleGameClick={props.handleGameClick} games={props.games}/>
     })}
   </div>
 );

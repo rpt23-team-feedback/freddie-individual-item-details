@@ -9,7 +9,7 @@ router.use((err, req, res, next) => {
 
 router.route('/single/:gameId').get( async (req, res, next) => {
   const gameId = req.params.gameId;
-  if (gameId < 1 || gameId > 300) {
+  if ((gameId < 1 || gameId > 300) || (gameId === parseFloat(gameId))) {
     res.status(400).send('No game of that ID, please enter valid game ID');
   } else {
     try {
@@ -33,14 +33,13 @@ router.route('/multiple/').get( async (req, res) => {
         if (gameIds) {
           if (Array.isArray(gameIds)) {
             for (const id of gameIds) {
-              if (id < 1 || id > 300) {
+              if ((id < 1 || id > 300) || (id === parseFloat(id))) {
                 invalidGameIds.push(id);
               } else {
                 gamesArray.push(db.getSingleGame(id));
               }
             }
-          }
-          else {
+          } else {
             gamesArray.push(db.getSingleGame(gameIds));
           }
         }
